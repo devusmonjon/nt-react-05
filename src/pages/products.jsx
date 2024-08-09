@@ -25,9 +25,9 @@ const Products = () => {
           to="/"
           className="my-4 text-xl bg-[#FF9900] px-5 py-2.5 flex justify-center items-center w-max rounded-lg text-white border-[#FF9900] border-2 duration-300 hover:bg-white hover:text-[#FF9900] outline-none active:bg-[#FF9900] focus:ring-2 ring-[#FF9900] ring-offset-2"
         >
-          Orqaga
+          Назад
         </Link>
-        <div>
+        <div className="flex flex-col md:flex-row gap-10 justify-between">
           <div>
             <div className="w-[403px] h-[400px] p-10 grid place-items-center border-2 border-[#FF9900]">
               <img src={imageUrl} alt="" className="h-full object-contain" />
@@ -48,6 +48,19 @@ const Products = () => {
                 </div>
               ))}
             </div>
+          </div>
+          <div>
+            <h1 className="md:text-3xl text-2xl font-bold">{product?.title}</h1>
+            <p className="md:text-xl text-lg font-normal py-10">
+              {product?.description}
+            </p>
+            <p className="md:text-2xl text-xl font-medium">${product?.price}</p>
+            <button
+              className="bg-[#FF9900] text-white font-bold py-2 px-4 rounded-lg my-10 border-[#FF9900] border-2 duration-300 hover:bg-white hover:text-[#FF9900] outline-none active:bg-[#FF9900] focus:ring-2 ring-[#FF9900] ring-offset-2"
+              onClick={() => alert("Added to cart")}
+            >
+              Добавить в корзину
+            </button>
           </div>
         </div>
       </div>
