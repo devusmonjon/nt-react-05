@@ -1,15 +1,26 @@
+import { Link } from "react-router-dom";
+
 const Product = ({ handleDelete, id, images, title, description, price }) => {
   return (
-    <div className="flex flex-col w-[300px]">
-      <div className="w-full h-[300px] px-4">
-        <img src={images[0]} alt={title} className="h-full object-contain" />
-      </div>
+    <div className="flex flex-col rounded-[26px] overflow-hiddens shadow-lg">
+      <Link
+        to={`/products/${id}`}
+        className="w-full h-[300px] px-4 flex justify-center items-center overflow-hidden"
+      >
+        <img
+          src={images[0]}
+          alt={title}
+          className="h-full object-contain duration-300 hover:scale-105"
+        />
+      </Link>
       <div className="px-4 py-2">
-        <h3 className="text-lg font-bold">
-          {title.slice(0, 20)} {title.length > 20 ? "..." : ""}
-        </h3>
+        <Link to={`/products/${id}`}>
+          <h3 className="text-lg font-bold" title={title}>
+            {title.slice(0, 20)} {title.length > 20 ? "..." : ""}
+          </h3>
+        </Link>
         <p className="text-sm text-gray-500">{description.slice(0, 70)} ...</p>
-        <p className="text-lg font-bold">{price} сум</p>
+        <p className="text-lg font-bold">${price} USD</p>
       </div>
       <button
         onClick={() => handleDelete(id)}
