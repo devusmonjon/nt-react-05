@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Product = ({ handleDelete, id, images, title, description, price }) => {
   return (
-    <div className="flex flex-col rounded-[26px] overflow-hiddens shadow-lg">
+    <div className="mx-4 sm:mx-0 flex flex-col rounded-[26px] overflow-hiddens shadow-lg">
       <Link
         to={`/products/${id}`}
         className="w-full h-[300px] px-4 flex justify-center items-center overflow-hidden"

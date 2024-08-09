@@ -15,4 +15,7 @@
     .container {
         @apply mx-auto;
     }
+    .scroll-snap {
+        scroll-snap-align: center;
+    }
 }
